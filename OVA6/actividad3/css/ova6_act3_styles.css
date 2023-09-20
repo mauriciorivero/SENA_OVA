@@ -1,0 +1,309 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("../css/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "CalibriBold";
+    src: url("../css/Calibri_Bold.TTF");
+}
+
+@font-face {
+    font-family: "CalibriRegular";
+    src: url("../css/Calibri_Regular.ttf");
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+HTML{
+    font-size: 62.5%;
+}
+
+body{
+    background: rgb(247,147,30);
+    background-image: url(../img/fondo_textura.jpg);
+}
+
+main{
+    border-radius: 3rem;
+    box-shadow: 1rem 1rem 2rem #B2B2B2 ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 80%;
+}
+
+.excerise_intro{
+    background-size: cover;
+    border-radius: 2rem 0rem 0rem 2rem;
+    height: 80vh;
+    width: 30%;
+}
+
+#box_intro{
+    background-image: url(../img/box_explanation_1.png);
+}
+
+.excercise_box{
+    background-color: white;
+    border-radius: 0rem 2rem 2rem 0rem;
+    /*box-shadow: 1rem 1rem 2rem grey;*/
+    display: flex;
+    flex-direction: column;
+    /*height: 63.2rem;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:2rem;
+    width: 70%;
+}
+
+.excercise_box h1{
+    color: #CC3401;
+    font-family: BebasNeue;
+    font-size: 3.5rem;
+}
+
+.excercise_box p{
+    font-family: CalibriRegular;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.excercise_box button{
+    background-color: green;   
+    border: solid 0.5rem green;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    width: 20rem;
+}
+
+.excercise_box button:hover{
+    background-color: #fff;   
+    border: solid 0.5rem green;
+    border-radius: 0.5rem;
+    color: green;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    width: 20rem;
+}
+
+.excercise_box button:active{
+    background-color: #CC3401;   
+    border: solid 0.5rem #CC3401;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    width: 20rem;
+}
+
+#introduction_box{
+    padding: 3rem;
+}
+
+.excercise_box-row{
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 0.2rem solid #CC3401;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 80%;
+}
+
+.excercise_box-rowtitle{
+    background-color: #CC3401;
+    border: 0.2rem solid #CC3401;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 80%;
+}
+
+.excercise_box-row-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 80%;
+}
+
+.excercise_box-column:nth-child(3){
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.excercise_box-column:nth-child(5){
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.excercise_box-column:nth-child(3) p{
+    align-items: center;
+    color: #CC3401;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.excercise_box-column:nth-child(5) p{
+    align-items: center;
+    color: #CC3401;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.excercise_box-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.excercise_box-columntitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.excercise_box-columntitle h1{
+    color: #FFFFFF;
+    font-family: BebasNeue;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.excercise_box-column h1{
+    color: #CC3401;
+    font-family: BebasNeue;
+    font-size: 1.5rem;
+    text-align: center;
+    /*text-shadow: 0.1rem 0.1rem #7C1E08;*/
+}
+
+.excercise_box-column h2{
+    color: #CC3401;
+    font-family: BebasNeue;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.excercise_box-column p{
+    color: #CC3401;
+    font-family: CalibriBold;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.excercise_box-column input{
+    border: 0.2rem solid #CC3401;
+    border-radius: 0.5rem;
+    color: #CC3401;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.excercise_box-column input::placeholder{
+    background-color: #CC3401;
+    border: 0.2rem solid #CC3401;
+    color: #FFFFFF;
+    font-family: CalibriRegular;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.excercise_box-column input:focus{
+    background-color: #CC3401;
+    border: 0.2rem solid #CC3401;
+    color: #FFFFFF;
+    font-family: CalibriBold;
+    font-size: 1.8rem;
+    outline: #CC3401;
+    text-align: center;
+    width: 100%;
+}
+
+.excercise_box-column button{
+    background-color: green;   
+    border: solid 0.5rem green;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    width: 20rem;
+}
+
+.excercise_box-column button:hover{
+    background-color: #fff;   
+    border: solid 0.5rem green;
+    border-radius: 0.5rem;
+    color: green;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    width: 20rem;
+}
+
+.excercise_box-column button:active{
+    background-color: #CC3401;   
+    border: solid 0.5rem #CC3401;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 1.8rem;
+    width: 20rem;
+}

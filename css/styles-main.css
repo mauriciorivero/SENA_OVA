@@ -1,0 +1,45 @@
+body{
+    background-image: url(../img/fondo_textura.jpg);
+    display: flex;
+    justify-content: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo-sena__img{
+    width: 10em;
+    height: 10em;
+}
+
+.menuppal ul{
+    list-style: none;
+}
+
+
+.menuppal li{
+    border: solid 0.5em black;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.menuppal a{
+    color: black;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 3em;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+}
+
+.menuppal a:hover{
+    color: white;
+    background-color: black;
+}
+
+.menuppal li:hover{
+    color: white;
+    background-color: black;
+}
+
+

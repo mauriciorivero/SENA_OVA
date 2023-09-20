@@ -1,0 +1,214 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(BebasNeue-Regular.ttf) format("truetype");
+  }
+  
+@font-face {
+    font-family: Sackers_Gothic_Light_AT;
+    src: url(calibri-regular.ttf) format("truetype");
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: rgba(200, 79, 45, 0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	height: 80vh;
+	width: 70%;
+}
+
+.crosword-box{
+	display: flex;
+	justify-content: flex-end;
+	height: 80vh;
+	width: 50%;
+}
+
+.content-box{
+	height: 80vh;
+	width: 50%;
+}
+
+.avatar{
+	position: relative;
+	bottom: 1300px;
+	left: -320px;
+	z-index: 3;
+}
+
+table{
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.title3{
+	background-color: #C84F2D;
+	color: #fff;
+	font-family: BebasNeue;
+	padding: 5px;
+}
+
+.btn-link{
+	background-color: #C84F2D;
+	color: #FFF;
+	font-family: BebasNeue;
+	padding: 5px;
+	text-decoration: none;
+	z-index: 10;
+}
+
+
+.btn-container{
+	position: absolute;
+	bottom: 40;
+	right: 40;
+}
+
+.intructions{
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+}
+
+.intructions h1{
+	background-color: #C84F2D;
+	color: white;
+	font-family: BebasNeue;
+}
+.intructions p{
+	color: Black;
+	font-family: Calibri;
+	margin-top: 5;
+}
+
+.main-game{
+	
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	height: 633px;
+	padding: 30px;
+	position: relative;
+	width: 1000px;
+}
+.puzzle {
+	border-collapse: collapse;
+	border-color:#000000;
+}
+
+.letter-cell {
+	text-align:center;
+	height:30px;
+	width:30px;
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.letter-text {
+	font-family:helvetica;
+	font-weight:bold;
+}
+
+.list-text {
+	font-family:helvetica;
+}
+
+li{
+	font-family: Calibri;
+	list-style: none;
+	padding: 3px;
+}
+
+.blank-cell {
+	background-color:#C84F2D;
+}
+
+.clickable {
+	cursor:pointer;
+}
+
+.linkable {
+	cursor:pointer;
+	color:black;
+}
+.background-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.strikeout {
+	position: relative;
+}
+
+.strikeout::after {
+	border-bottom: 0.250em solid black;
+	content: "";
+	left: 0;
+	margin-top: calc(0.125em / 2 * -1);
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+.red-strikeout {
+	position: relative;
+}
+
+.red-strikeout::after {
+	border-bottom: 0.250em solid #C84F2D;
+	content: "";
+	left: 0;
+	margin-top: calc(0.250em / 2 * -1);
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+.crossword-grid-cell-number {
+	float: left;
+	font-family: helvetica;
+	font-size: 0.9em;
+}
+
+.relative-position {
+	position: relative;
+}
+
+#answer-form {
+	display: none;
+	border: 2px solid black;
+	font-family: tahoma;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 30em;
+	height: 12em;
+	margin-top: -9em;
+	margin-left: -15em;
+	border: 1px solid #CCCCCC;
+	background-color: #F3F3F3;
+	z-index: 5;
+}
+
+.short-margin {
+	margin: 20px;
+}
+
+.hidden {
+	display: none;
+}

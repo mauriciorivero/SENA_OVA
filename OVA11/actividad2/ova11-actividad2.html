@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/ova11-actividad2-styles.css">
+</head>
+<body>
+
+    <header>
+        <div id="aviso_introduccion" class="header_aviso">
+            <h2>Introduccion</h2>
+        </div>
+        <div id="aviso_actividad" class="header_aviso">
+            <h2>Actividad</h2>
+        </div>
+        <div id="aviso_feedback" class="header_aviso">
+            <h2>Retroalimentacion</h2>
+        </div>
+    </header>
+    <main>
+        <section id="introduccion" class="Contenido">
+            <div class="ContenidoTitulo">
+                <h1>Introducción</h1>
+            </div>
+            <div class="ContenidoCuerpo">
+                <span>
+                    Teniendo en cuenta el siguiente video Proceso Constructivo de una vivienda paso a paso - Construcción I,  Indique cuál de los siguientes interrogantes corresponden a la lista de verificación en el proceso de construcción de la vivienda.  
+                    Aprendiz: En la siguiente lista de chequeo encontraras los indicadores que deberás tener en cuenta a la hora de construir la vivienda según el video.
+                    Selecciona sí o no dependiendo si se han tenido en cuenta en el video.
+                    Solo tiene 5 oportunidades, de lo contrario la edificación se desplomará.
+                </span>
+                <p>
+                    <iframe width="900px" height="500px" src="https://www.youtube.com/embed/8mxrP8WGBGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+                    </iframe>
+                </p>
+                <button id="btnIniciar">Iniciar</button>
+            </div>
+        </section>
+
+        <section id="listaChequeo" class="Contenido">
+            <div class="ContenidoTitulo">
+                <h1>Lista de Chequeo</h1>
+            </div>
+            <div class="ContenidoCuerpo">
+                <div class="ContenidoCuerpo_Fila Encabezado">
+                    <div class="ContenidoCuerpo_Columna"><h2>Numero</h2></div>
+                    <div class="ContenidoCuerpo_Columna"><h2>Indicadores / Factores a Evaluar</h2></div>
+                    <div class="ContenidoCuerpo_Columna"><h2>¿Cumple?</h2></div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">1</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Identifica los diferentes sistemas constructivos de acuerdo con planos y especificaciones</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check1" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">2</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Reconoce las normas que regulan la construcción de edificaciones en Colombia</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check2" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">3</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se respeta todo lo estipulado en los permisos de curaduría o planeación o alcaldías referentes a: permiso y línea de construcción, manejo del espacio público, zona peatonal, arquitectura, urbanismo, arborización, entre otros, cumpliendo con las normas urbanísticas y de edificación vigentes en el distrito o municipios de ejecución de la obra.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check3" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">4</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se realiza el correcto almacenamiento de materiales de acuerdo con lo estipulado en las normas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check4" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">5</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se verifica el replanteo con equipos topográficos según planos</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check5" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">6</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se establecen medidas de seguridad para evitar daños a terceros (físicos o materiales), se recomienda elaborar actas de vecindad a las construcciones colindantes o más cercanas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check6" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">7</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Las excavaciones cumplen con los diseños y las especificaciones técnicas dadas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check7" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">8</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Los muros en Drywall cumplen con la información suministrada en los planos y las especificaciones técnicas dadas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check8" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">9</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">La cubierta en Madera cumple con las normas de las cerchas de los planos.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check9" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">10</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">El concreto se preparó y cumple de acuerdo con el diseño de mezclas. Respetando el tamaño de los agregados y cumpliendo con la dosificación.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check10" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">11</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">El amarre de acero, las varillas longitudinales se encuentran en posición, con los espaciamientos y traslapos adecuados.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check11" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">12</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">La cantidad de huellas y contrahuellas y sus respectivas dimensiones concuerdan con el diseño propuesto y aprobado (incluye espesor).</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check12" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">13</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Las dimensiones (incluye espesor) de la losa se encuentran conforme al diseño estructural aprobado, no se evidencian aceros expuestos (Calque de refuerzos).</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check13" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">14</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">El acabado rústico instalado (color, forma, marca, dimensiones), es el especificado en los planos.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check14" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">15</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se aplica las capas de estuco dejando secar completamente, lijando y limpiando según especificaciones técnicas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check15" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">16</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">El proceso de instalación técnicas es el planteado en las normas planos y especificaciones técnicas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check16" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">17</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Las tuberías de red contra incendio y sus accesorios cumplen con los planos, normas y especificaciones técnicas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check17" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">18</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">La losa de entrepiso en cubierta cumple con los diseños y especificaciones técnicas, así como el manejo de humedad (desagüe).</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check18" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">19</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Las ventanas y puertas están plomadas, niveladas, cuadradas y funcionan correctamente.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check19" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">20</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Las herramientas para emplear son las indicadas para las tareas.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check20" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaNumero">21</p></div>
+                    <div class="ContenidoCuerpo_Columna"><p class="ContenidoCuerpo_ColumnaIndicador">Se emplean los EPP (elementos de protección personal), y se hace uso adecuado de los materiales en el desarrollo de la actividad.</p></div>
+                    <div class="ContenidoCuerpo_Columna">
+                        <label class="switch">
+                            <input id="check21" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="ContenidoCuerpo_Fila">
+                    <div></div>
+                    <div>
+                        <button id="btnVerificar">Verificar</button>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+        <section id="RetroalimentacionPositiva" class="RetroalimentacionContainer">
+            <h1>Felicitaciones!</h1>
+            <p>Muy bien has realizado correctamente la comprobación de la lista de chequeo, ahora puedes continuar con la siguiente actividad</p>
+            <button id="btnTerminar">Terminar</button>
+        </section>
+        <section id="RetroalimentacionNegativa" class="RetroalimentacionContainer">
+            <h1>Vuelve a intentarlo</h1>
+            <p>Algunos interrogantes de la lista de chequeo no están diligenciados correctamente, puedes volver a intentarlo con la lista tal cual como la dejaste.</p>
+            <p id="estado_intentos"></p>
+            <button id="btnReintentar">Reintentar</button>
+        </section>
+        <section id="RetroalimentacionNegativaTotal" class="RetroalimentacionContainer">
+            <h1>Intentos terminados</h1>
+            <p>Has consumido todos tus 5 intentos debes iniciar nuevamente todo el formulario de lista de chequeo. Recuera revisar el material</p>
+            <button id="btnReiniciar">Reiniciar</button>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/parametrizacion-ova11-act2.js"></script>
+</body>
+</html>

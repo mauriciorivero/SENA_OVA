@@ -1,0 +1,233 @@
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: CalibriRegular;
+    src: url(fonts/Calibri_Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: CalibriBold;
+    src: url(fonts/Calibri_Bold.TTF) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #830000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#_preload_div_{
+    position:relative;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+}
+#animation_container {
+    background-color:rgba(255, 255, 255, 1.00); 
+    bottom:0;
+	height:33.5rem;
+    left:0;
+    margin:auto;
+    position:relative;
+	right:0;
+	top:0;
+    width:128rem;
+  }
+
+#canvas{
+    background-color:rgba(255, 255, 255, 1.00);
+    display: none;
+    position: absolute;
+}
+
+#dom_overlay_container{
+    display: none;
+    height:335px;
+    overflow:hidden;
+    left: 0px;
+    pointer-events:none;      
+    position: absolute;
+    top: 0px;
+    width:1280px;
+}
+
+#prueba{
+    align-items: center;
+    background-color: #830000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw; 
+}
+
+.contenedor-palabra{
+    align-items: center;
+    border: solid 0.2rem white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45vh;
+    width: 70%;
+}
+
+.timer-box{
+    border-bottom: solid 0.2rem white;
+    display: flex;
+    padding: 1.5rem;
+    top: 0;
+}
+
+.timer-text{
+    color: white;
+    font-family: BebasNeue, sans-serif;
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+
+.contenedor-definicion{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30vh;
+    padding: 4rem;
+    width: 100%;
+}
+
+.contenedor-resultado{
+    border: solid 2rem violet;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 4rem;
+    width: 100%;
+}
+
+.contenedor-definicion h1{
+    color: white;
+    font-family: BebasNeue, sans-serif;
+    font-size: 4rem;
+    margin-top: 3rem;
+}
+
+.contenedor-definicion p{
+    color: white;
+    font-family: CalibriRegular, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.contenedor-definicion input{
+    font-family: BebasNeue, sans-serif;
+    font-size: 3rem;
+    height: 4rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.contenedor-definicion input::placeholder{
+    color: gray;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.contenedor-definicion button{
+    background-color: #E74E25;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #830000 0.6rem;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    font-family: BebasNeue, sans-serif;
+    font-size: 3rem;
+    height: 6rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 40%;
+}
+
+.contenedor-definicion button:active{
+    background-color: #830000;
+    border-bottom: solid  #E74E25 0.6rem;
+}
+
+.tituloResultadoLetra{
+    border: solid 0.5rem;
+    border-radius: 1rem;
+    font-family: BebasNeue, sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 1rem;
+    width: 40vw;
+}
+
+#contenedor-resultados{
+    align-items: center;
+    background-color: #830000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin-top: 2xrem;
+    margin-bottom: 10rem;
+    width: 100vw; 
+}
+
+#contenedor-resultados h2{
+    color: white;
+    font-family: BebasNeue, sans-serif;
+    font-size: 4rem;
+    margin: 1rem;
+}
+
+.resultadoPalabraCorrecto{
+    border: solid 0.2rem white;
+    border-radius: 0.3rem;
+    color: white;
+    font-family: CalibriRegular, sans-serif;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 40rem;
+}
+
+.resultadoPalabraIncorrecto{
+    border: solid 0.2rem yellow;
+    border-radius: 0.3rem;
+    color: yellow;
+    font-family: CalibriRegular, sans-serif;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 40rem;
+}

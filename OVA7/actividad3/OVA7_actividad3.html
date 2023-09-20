@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/ova7_act3_styles.css">
+    <title>Document</title>
+    <script src="CreateJS-1.0.1/dist/createjs.js"></script>
+    <script src="CreateJS-1.0.1/dist/createjs.min.js"></script>
+<script src="actividad3b.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("5B929748A86341D19569597A4739E77C");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.OVA7_actividad3b();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+</head>
+<body onload="init();">
+    <header>
+        
+    </header>
+    <main id="main">
+        <section id="box_intro" class="excerise_intro">
+            
+        </section>
+        <section id="introduction_box" class="excercise_box">
+            <h1>Cantidad de obra de los elementos estructurales de la losa</h1>
+            <p>Descargue el PDF con las indicaciones, lea muy bien todo el marco teórico y luego prosiga a desarrollar la actividad haciendo clic en el botón iniciar actividad</p>
+            <button id="introduction_download-button">Descargar</button>
+            <button id="introduction_start-button">Iniciar actividad</button>
+            <button id="backBtn">Volver</button>
+        </section>
+        <section id="main_box" class="excercise_box">
+            <div class="excercise_box-row">
+                <h1>Cantidad de obra de los elementos estructurales de la losa</h1>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>elemento</h2></div>
+                <div class="excercise_box-columnhead"><h2>Unidad</h2></div>
+                <div class="excercise_box-columnhead"><h2>Largo</h2></div>
+                <div class="excercise_box-columnhead"><h2>Ancho</h2></div>
+                <div class="excercise_box-columnhead"><h2>Alto</h2></div>
+                <div class="excercise_box-columnhead"><h2>Parcial</h2></div>
+                <div class="excercise_box-columnhead"><h2>Cantidad</h2></div>
+                <div class="excercise_box-columnhead"><h2>Total</h2></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Viga aerea 1-2-3</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="estructura_elemento1_unidad" class="excercise_box-input">
+                        <option value="M2">M2</option>
+                        <option value="M3">M3</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_largo" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Viga aerea 4-5</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="estructura_elemento2_unidad" class="excercise_box-input" id="">
+                        <option value="M2">M2</option>
+                        <option value="M3">M3</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_largo" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Viguetas</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="estructura_elemento3_unidad" class="excercise_box-input" id="">
+                        <option value="M2">M2</option>
+                        <option value="M3">M3</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_largo" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Espacio losa sobre viguetas</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="estructura_elemento4_unidad" class="excercise_box-input" id="">
+                        <option value="M2">M2</option>
+                        <option value="M3">M3</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_largo" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_total" class="excercise_box-input" type="text"></div>
+            </div>
+        
+            <div class="excercise_box-columaction">
+                <button id="estructura-btnContinue">Continuar</button>
+                <button id="estructura-btnReload">Reiniciar</button>
+                <button id="estructura-calcular-btn">Calcular</button>
+            </div>
+        </section>
+
+
+        <!-------------------------------------------------------------------------------------------------------------------------->
+        <!--------Section 2 for the second part of the excersice-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------------------------------------------->
+
+        <section id="main_box2" class="excercise_box">
+            <div class="excercise_box-row">
+                <h1>Cuadro de Hierro</h1>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>elemento</h2></div>
+                <div class="excercise_box-columnhead"><h2># Barra</h2></div>
+                <div class="excercise_box-columnhead"><img src="img/simbolo-rho.png" alt=""></div>
+                <div class="excercise_box-columnhead"><h2>Longitud Unitaria</h2></div>
+                <div class="excercise_box-columnhead"><h2>Cantidad</h2></div>
+                <div class="excercise_box-columnhead"><h2>Longitud Total</h2></div>
+                <div class="excercise_box-columnhead"><h2>Masa Nominal</h2></div>
+                <div class="excercise_box-columnhead"><h2>Masa Total en Kg</h2></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Viga aerea 1-2-3</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento1_unidad" class="excercise_box-input">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento1_largo" class="excercise_box-input">
+                        <option value="1/2">1/2</option>
+                        <option value="1/4">1/4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento1_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento1_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento1_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento1_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento1_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Vigas  4-5</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento2_unidad" class="excercise_box-input" id="">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento2_largo" class="excercise_box-input">
+                        <option value="1/2">1/2</option>
+                        <option value="1/4">1/4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento2_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento2_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento2_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento2_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento2_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Viguetas</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento3_unidad" class="excercise_box-input" id="">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento3_largo" class="excercise_box-input">
+                        <option value="1/2">1/2</option>
+                        <option value="1/4">1/4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento3_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento3_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento3_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento3_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento3_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Estribos en vigas</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento4_unidad" class="excercise_box-input" id="">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento4_largo" class="excercise_box-input">
+                        <option value="1/2">1/2</option>
+                        <option value="1/4">1/4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento4_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento4_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento4_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento4_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento4_total" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Estribos en viguetas</h2></div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento5_unidad" class="excercise_box-input" id="">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead">
+                    <select id="hierro_elemento5_largo" class="excercise_box-input">
+                        <option value="1/2">1/2</option>
+                        <option value="1/4">1/4</option>
+                    </select>
+                </div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento5_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento5_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento5_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento5_cantidad" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento5_total" class="excercise_box-input" type="text"></div>
+            </div>
+        
+            <div class="excercise_box-columaction">
+                <button id="hierro-btnBack">Continuar</button>
+                <button id="hierro-btnReload">Reiniciar</button>
+                <button id="hierro-calcular-btn">Calcular</button>
+            </div>
+        </section>
+        <section class="animate-container" id="animation_container">
+            <canvas id="canvas" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:2304px; height:1270px; position: absolute; left: 0px; top: 0px; display: block;">
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/OVA7-Activity3-Actions.js"></script>
+    <script src="parametrizacion-ova7-act3.js"></script>
+</body>
+</html>

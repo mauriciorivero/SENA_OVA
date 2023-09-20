@@ -1,0 +1,350 @@
+
+@font-face {
+  font-family: BebasNeue;
+  src: url(fonts/BebasNeue-Regular.ttf) format("truetype");
+}
+
+
+@font-face {
+  font-family: CalibriRegular;
+  src: url(fonts/Calibri_Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: CalibriBold;
+  src: url(fonts/Calibri_Bold.TTF) format("truetype");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/*
+******************************************
+Estilos para el header--------------------------------------------
+********************************************
+*/
+
+header{
+  align-items: center;
+  background-color: gray;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  width:100%;
+}
+
+.header_aviso{
+  align-items: center;
+  border: solid 0.5rem #fff;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#aviso_introduccion{
+  background-color: #E74E25;
+}
+
+.header_aviso h2{
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 4rem;
+}
+
+/*
+******************************************
+Fin de los estilos para el header--------------------------------------------
+********************************************
+*/
+
+
+/*
+******************************************
+Estilos para el main--------------------------------------------
+********************************************
+*/
+
+main{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Contenido{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ContenidoTitulo{
+  padding: 2rem;
+  width: 100%;
+}
+
+.ContenidoTitulo h1{
+  font-family: BebasNeue;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.ContenidoCuerpo{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem 0 2rem;
+  width: 100%;
+}
+
+.ContenidoCuerpo span{
+  font-family: Calibri;
+  font-size: 2rem;
+}
+
+.ContenidoCuerpo button{
+  background-color: #830000;
+  border-bottom: solid 0.8rem #E74E25;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  margin: 3rem;
+  padding: 2rem;
+  width: 40vw;
+}
+
+.ContenidoCuerpo button:hover{
+  background-color:#E74E25;
+  border-bottom: solid 0.8rem #830000;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  margin: 3rem;
+  padding: 2rem;
+  width: 40vw;
+}
+
+.ContenidoCuerpo button:active{
+  background-color:#fff;
+  border: solid 0.8rem #830000;
+  border-radius: 0.5rem;
+  color: #830000;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  margin: 3rem;
+  padding: 2rem;
+  width: 40vw;
+}
+
+.ContenidoCuerpo_Fila{
+  align-items: center;
+  border: solid 0.1rem #830000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.ContenidoCuerpo_Fila.Encabezado{
+  align-items: center;
+  background-color: #830000;
+  padding: 1.5rem;
+}
+.ContenidoCuerpo_Fila.Encabezado.ContenidoCuerpo_Columna{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ContenidoCuerpo_Columna{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ContenidoCuerpo_Columna h2{
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  width: 80%
+}
+
+.ContenidoCuerpo_ColumnaNumero{
+  font-family: Calibri;
+  font-size: 3.5rem;
+  text-align: center;
+  width: 20%
+}
+
+.ContenidoCuerpo_ColumnaIndicador{
+  font-family: Calibri;
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%
+}
+
+.ContenidoCuerpo_Columna{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60rem;
+}
+
+.RetroalimentacionContainer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.RetroalimentacionContainer h1{
+  font-family: BebasNeue;
+  font-size: 4rem;
+  text-align: center;
+  padding: 1rem;
+  width: 80%
+}
+
+.RetroalimentacionContainer p{
+  font-family: Calibri;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  width: 80%
+}
+
+.RetroalimentacionContainer button{
+  background-color: #830000;
+  border-bottom: solid 0.8rem #E74E25;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  margin: 3rem;
+  padding: 2rem;
+  width: 40vw;
+}
+
+.RetroalimentacionContainer button:hover{
+  background-color:#E74E25;
+  border-bottom: solid 0.8rem #830000;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-family: BebasNeue;
+  font-size: 3rem;
+  margin: 3rem;
+  padding: 2rem;
+  width: 40vw;
+}
+
+/*
+******************************************
+Fin de los estilos para el main--------------------------------------------
+********************************************
+*/
+
+/*
+******************************************
+Estilos para el footer--------------------------------------------
+********************************************
+*/
+
+
+
+/*
+******************************************
+Fin de los estilos para el footer--------------------------------------------
+********************************************
+*/
+
+/*
+******************************************
+Estilos para el toggle buton (El check box)--------------------------------------------
+********************************************
+*/
+
+/* El checkbox - La caja al rededor del slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* El slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #E74E25;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #E74E25;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* El slider redondeado */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
+  /*
+******************************************
+Fin de los estilos para el toggle buton (El check box)--------------------------------------------
+********************************************
+*/
+

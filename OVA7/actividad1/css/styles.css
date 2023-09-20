@@ -1,0 +1,202 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("fonts/BebasNeue-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: "CalibriBold";
+    src: url("fonts/Calibri_Bold.TTF");
+  }
+  
+  @font-face {
+    font-family: "CalibriRegular";
+    src: url("fonts/Calibri_Regular.ttf");
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    background: #E64F27;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.title-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+}
+
+.title-container h1{
+    color: white;
+    font-family: "BebasNeue";
+    font-size: 40px;
+}
+
+.title-container p{
+    color: white;
+    font-family: "CalibriRegular";
+    font-size: 20px;
+    text-align: center;
+}
+
+.main-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+    width: 90%;
+}
+
+.container-action{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-action h2{
+    color: white;
+    cursor: pointer;
+    font-family: "BebasNeue";
+    margin-top: 40px;
+}
+
+.container-action h2:hover{
+    text-decoration: underline;
+}
+
+#btn_continuar1{
+    display: none;
+}
+
+.container-wheel img{
+    cursor:pointer;
+}
+
+#btnComparar{
+    background-color: #E64F27;
+    border: white 3px solid;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: "BebasNeue";
+    font-size: 20px;
+    padding: 20px;
+}
+
+#btnComparar:hover{
+    background-color: white;
+    border: white 3px solid;
+    border-radius: 5px;
+    color: #E64F27;
+    cursor: pointer;
+    font-family: "BebasNeue";
+    font-size: 20px;
+    padding: 20px;
+}
+
+#btnComparar2{
+    background-color: #E64F27;
+    border: white 3px solid;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: "BebasNeue";
+    font-size: 20px;
+    padding: 20px;
+}
+
+#btnComparar2:hover{
+    background-color: white;
+    border: white 3px solid;
+    border-radius: 5px;
+    color: #E64F27;
+    cursor: pointer;
+    font-family: "BebasNeue";
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container-answers{
+    display: flex;
+}
+
+.answer-box{
+    align-items: center;
+    border: solid 2px white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.answer-box h1{
+    color: white;
+    font-family: "BebasNeue";
+}
+
+.container-results{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 80%;
+}
+
+.container-results div{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%
+}
+
+.container-results div img{
+    height: 200px;
+    width: 200px;
+}
+
+.container-results div p{
+    color: white;
+    font-family: "CalibriRegular";
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.container-results div h1{
+    color: white;
+    font-family: "BebasNeue";
+    font-size: 50px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.container-results div h2{
+    color: white;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+}
+
+#btnVolver{
+    cursor: pointer;
+}

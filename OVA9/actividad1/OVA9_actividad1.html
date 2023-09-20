@@ -1,0 +1,161 @@
+<html>
+
+<head>
+	<title>Actividad 1 - OVA6</title>
+	<meta http-equiv="content-type" content="text/css/javascript/php; charset=UTF-8">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="javascript/crossword-puzzle.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/crossword-puzzle.css">
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="Untitled-1.js?1659978785464"></script>
+<script>
+	var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C68422A6AB5A422C98910F17201F2DB4");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib.Untitled1();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',false,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+
+</script>
+</head>
+
+<script type="text/javascript">
+
+	$(document).ready(function(event) {
+		var puzzlewords = [
+				// palabra, pista
+			['Guadua', 'Conforma la estructura del sistema constructivo bahareque y también se denomina bambú.'],
+			['ResinaAutoreparable', 'Consiste en introducir en el hormigón microcápsulas que contienen bacterias y lactato de calcio de forma que, cuando se produce una grieta, el agua que penetra en la misma reacciona con el contenido solidificándolo y rellenando la grieta.'],
+			['Voladizo', 'Parte de la huella que sobresale y vuela sobre la huella inferior.'],
+			['MurosEnGaviones', 'Es el proceso de reutilización de materiales desechados para volver a emplearlos para el mismo u otros fines.'],
+			['MaterialesReciclados', 'Se componen de jaulas metálicas conformadas por mallas hexagonales de acero galvanizado, haciéndolas resistentes a la intemperie por un extenso período de tiempo, libres de oxidación.'],
+			['TierraPisada', 'Es un material de construcción que se obtiene al mezclar arena, arcilla y agua; la compactación puede realizarse por simple vibrado o “comprimiendo” el material lo cual a su vez se puede conseguir por métodos “estáticos” o “dinámicos”.'],
+			['PlasticoPrensado', 'En este sistema se utilizan botellas, bolsas, empaques de todo tipo comprimidos, para fabricar elementos modulares.'],
+			['FibrasNaturales', 'Al utilizar las pacas para la construcción, se disminuye la cantidad de desechos agrícolas que son quemados, minimizando la contaminación atmosférica y calentamiento global.'],
+			['HEMPCRETE', 'Para su fabricación se usan las fibras más ricas en celulosa del cáñamo y se mezclan con cal, en estado de piedra caliza en polvo; además de arena y agua'],
+		];
+		crosswordPuzzle(puzzlewords);
+	});
+
+</script>
+
+<body onload="init();">
+	<header>
+		<figure>
+			<img src="images/titulo_actividad1.png" alt="">
+		</figure>
+	</header>
+	<section class="main-box">
+		<div class="crosword-box">
+			<div id="root" class="root">
+			</div>
+		</div>
+		<div class="content-box">
+			<div id="lists" class="lists">
+				<div class="intructions">
+					<h1>Instrucciones</h1>
+					<p>Debajo hay un conjunto de definiciones, hacer clic sobre cada una de ellas para desplegar el cuadro de texto a rellenar de acuerdo a la disposición de cada nua de las palabras ya sean horizontales o verticales.</p>
+				</div>
+				
+				<table>
+					<tr>
+						<td width="50%" id="left-list" valign="top" class="list-text">
+							<h3 class="title3">Horizontales</h3>
+						</td>
+						<td width="50%" id="right-list" valign="top" class="list-text">
+							<h3 class="title3">Verticales</h3>
+						</td>
+					</tr>
+			
+				</table>
+				
+			</div>
+			<div class="btn-container">
+				<a id="backBtn" class="btn-link" href="#">Volver</a>
+			</div>
+		</div>
+	</section>
+	<section class="main-game">
+		
+		
+		
+	</section>
+	<div class="avatar">
+		<div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:800px; height:600px">
+			<canvas id="canvas" width="800" height="600" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:800px; height:600px; position: absolute; left: 0px; top: 0px; display: none;">
+			</div>
+		</div>
+		<div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:600px; width: 800px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1659978785464 style='vertical-align: middle; max-height: 100%'/></div>
+	</div>
+	
+
+
+<div id="answer-form">
+
+	<div class="short-margin">
+		
+		<p id="position-and-clue"></p>
+		
+		<p>Respuesta : <input id="solution-answer" type="text" size="40"></p>
+		
+		<p id="answer-results" class="hidden"></p>
+		
+		<p><input type="button" id="cancel-button" value="Cancelar"> <input type="button" id="answer-button" value="Responder"> <input type="button" id="reveal-answer-button" value="Revelar Respuesta"></p>
+		
+	</div>
+	
+</div>
+<script>
+
+	var actividad = "actividad2";
+
+	document.getElementById("backBtn").onclick = function(){
+		localStorage.setItem("textvalue", actividad);
+		window.open("../OVA9.html","_self");
+		return false;
+	}
+	
+</script>
+</body>
+
+</html>

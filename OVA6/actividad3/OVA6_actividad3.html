@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/ova6_act3_styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <section id="box_intro" class="excerise_intro">
+            
+        </section>
+        <section id="introduction_box" class="excercise_box">
+            <h1>Cálculo de Cantidad de Obra</h1>
+            <p>Teniendo en cuenta el ejercicio anterior (actividad 2) dispuesto en este recurso educativo digital y con los conceptos aprendidos, lo invitamos a desarrollar la siguiente actividad.</p>
+            <p>Descargue el PDF con las indicaciones, lea muy bien todo el marco teórico y luego prosiga a desarrollar la actividad haciendo clic en el botón iniciar actividad</p>
+            <button id="introduction_download-button">Descargar</button>
+            <button id="introduction_start-button">Iniciar actividad</button>
+            <button id="backBtn">Volver</button>
+        </section>
+        <section id="main_box" class="excercise_box">
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><h1>Cantidad por M3</h1></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><h1>Cantidad</h1></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><h1>Total</h1></div>
+            </div>
+            <div class="excercise_box-rowtitle">
+                <div class="excercise_box-columntitle"><h1>Concreto</h1></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Cemento</p></div>
+                <div class="excercise_box-column"><input id="cemento_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="cemento_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="cemento_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Arena</p></div>
+                <div class="excercise_box-column"><input id="arena_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="arena_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="arena_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Triturado</p></div>
+                <div class="excercise_box-column"><input id="triturado_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="triturado_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="triturado_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Agua</p></div>
+                <div class="excercise_box-column"><input id="agua_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="agua_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="agua_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-rowtitle">
+                <div class="excercise_box-columntitle"><h1>Madera</h1></div>
+            </div>
+            
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Fondo</p></div>
+                <div class="excercise_box-column"><input id="fondo_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="fondo_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="fondo_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Escalon</p></div>
+                <div class="excercise_box-column"><input id="escalon_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="escalon_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="escalon_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Lados</p></div>
+                <div class="excercise_box-column"><input id="lados_input1" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>*</p></div>
+                <div class="excercise_box-column"><input id="lados_input2" type="number" placeholder="0.000"></div>
+                <div class="excercise_box-column"><p>=</p></div>
+                <div class="excercise_box-column"><input id="lados_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-column"><p>Total Madera</p></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><input id="madera_input3" type="number" placeholder="0.000"></div>
+            </div>
+            <div class="excercise_box-row-action">
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><span></span></div>
+                <div class="excercise_box-column"><button id="btnCalculate">Calcular</button><button id="btnReload">Reintentar</button><button id="btnBack">Volver al inicio</button></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/OVA6-Activity3-Actions.js"></script>
+</body>
+</html>

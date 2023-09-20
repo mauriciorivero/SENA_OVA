@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="OVA2V002_Actividad_1_CSS/estilos-sopa.css">
+    <title>OVA2 - Actividad 1</title>
+    <link rel="stylesheet" type="text/css" href="OVA2V002_Actividad_1_CSS/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="OVA2V002_Actividad_1_CSS/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="OVA2V002_Actividad_1_CSS/jquery.tagit.css">
+    
+    <!-- Librerias para generar el juego -->
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/jquery.min.js"></script>
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/wordfind.js"></script>
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/wordfindgame.js"></script>
+
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/jquery-ui.min.js"></script>
+    <!-- Libreria para ingreso de palabras -->
+    <script type="text/javascript" src="OVA2V002_Actividad_1_js/tag-it.js"></script>
+    <script>
+        //@grant window.close;
+        function window_close_onclick(){
+            if(confirm("Esta ventana de actividad se cerrará")){
+                window.close();
+            }
+        }
+    </script>
+    <style>
+            #listaPalabras{
+                display:none;
+            }
+           #juego .puzzleSquare{
+                height: 17px;
+                width: 17px;
+                text-transform: uppercase;
+                background-color: white;
+                border: 0;
+                font: 0.8em sans-serif;
+                cursor: pointer;
+            }
+            #juego .selected {
+                background-color: #EC4C31;
+                color: #ffffff;
+                font-weight: bold;
+            }
+
+            #juego .found {
+                font-weight: bold;
+                background-color: #830000;
+                color: white;
+            }
+
+            #juego .solved {
+                font-weight: bold;
+                background-color: #B11629;
+                color: white;
+            }
+            
+    </style>
+</head>
+<body style="background-image: url(OVA2V002_Actividad_1_img/fondo_textura.jpg);">
+    <script type="text/javascript">
+        var ListaPalabras;
+        $(document).ready(function() {
+            ListaPalabras = $("#listaPalabras").tagit({});
+            Crear();
+        });
+        </script>
+    <div class="container">
+        <div class="Palabras">
+            <div class="introduccion">
+                <p class="texto-introduccion">Busca las palabras que aparecen al lado derecho de la sopa de letras, deberas de mantener seleccionado con el raton las letras que crees que conforman la palabras y si la palabra coincide con la que se busca se
+                    colocara de color azul y se tachará de la lista.</p>
+            </div>
+            <div class=contenedor-palabras>
+                <h2>Palabras</h2>
+                <ul id="listaPalabras">
+                    <li>Martillo</li>
+                    <li>Alicate</li>
+                    <li>Destornillador</li>
+                    <li>SierrasCirculares</li>
+                    <li>Taladros</li>
+                    <li>LlavesDeTorqueNeumatico</li>
+                    <li>Pala</li>
+                    <li>Llana</li>
+                    <li>Palustre</li>
+                    <li>Flexometro</li>
+                    <li>MangueraDeNivel</li>
+                    <li>Codales</li>
+                    <li>Cincel</li>
+                    <li>Plomada</li>
+                    <li>Hilo</li>
+                    <li>Pica</li>
+                </ul>
+                <div id="Palabras"></div>
+                
+            </div>
+        </div>
+        
+        <div id="juego" class="contenido-sopa">
+        </div>
+      </div>
+      <div>
+       <button onclick="Crear();"> Crear Juego</button>
+        <button id='solve'>Resolver</button>
+    </div>
+    <a id="enlace_terminar" href="../OVA2V002_pt1.html"><img src="OVA2V002_Actividad_1_img/feedback_ok.png" alt=""></a>
+    <a href="#" onclick="window_close_onclick(); return false;" id="btn_cerrar"><img src="OVA2V002_Actividad_1_img/icono_cerrar.png" alt="" width="60px;"></a>
+    <a href="../OVA2V002_intro.html" id="btn_atras"><img src="OVA2V002_Actividad_1_img/icono_atras.png" alt="" width="110px"></a>
+    <script>
+
+        var palabras = [];
+        var juego;
+
+        function Crear() {
+            // Tomar las palabras de la lista e introducurlas en un array
+            datos = ListaPalabras[0].textContent.trim().split("×");
+            for (i = 0; i < (datos.length) - 1; i++) {
+                palabras.push(datos[i]);
+            }
+
+            $('#Juegos').show();
+            /*
+              se esta indicando que en el contenedor con el id juego se va a mostrar la sopa de letras
+              y el contenedor con el id palabras va a mostrar las palabras a buscar
+            */
+            juego = wordfindgame.create(datos, '#juego', '#Palabras');
+            // Estructura de la sopa de letras
+            var puzzle = wordfind.newPuzzle(datos, {
+                height: 18,
+                width: 18,
+                fillBlanks: false
+            });
+        }
+        $('#solve').click(function() {
+            wordfindgame.solve(juego, palabras);
+        });
+    </script>
+</body>
+</html>

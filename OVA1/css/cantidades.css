@@ -1,0 +1,348 @@
+@font-face {
+    font-family: calibri;
+    src: url(../fonts/Calibri_Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: calibri-bold;
+    src: url(../fonts/Calibri_Bold.TTF) format("truetype");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: calibri;
+}
+
+.boton-movil{
+    width: 653px;
+    height: 522px;
+    background-image: url(../OVA1-v9-cantidades-images/boton-inicio-movil_1.png);
+    background-size: cover;
+}
+
+body{
+    background: url(../OVA1-v9-cantidades-images/fondo_textura.jpg);
+}
+
+
+
+#animation_container{
+    background-color:rgba(255, 255, 255, 1.00);
+    width:560px;
+    height:310px;
+    display: none;
+}
+
+#canvas{
+    position: absolute;
+    display: block;
+    background-color:rgba(255, 255, 255, 1.00);
+    width:560px;
+    height:310px;
+}
+
+#dom_overlay_container{
+    pointer-events:none;
+    overflow:hidden;
+    width:560px;
+    height:310px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+}
+
+#contenedor-ayuda{
+    width: 560px;
+    height: 310px;
+    position: absolute;
+    background-image: url(../OVA1-v9-cantidades-images/Panel-Ayuda_fondo.png);
+    background-size: cover;
+    display: none;
+    top: 5em;
+    right: 14em;
+}
+
+
+.preview-plano{
+    background-size: cover;
+    position: absolute;
+    bottom: 16em;
+    left: 7em;
+    border-radius: 10px;
+    height: 4.5em;
+    width: 8em;
+}
+
+button:disabled{
+    color:gray;
+    background-color:white;
+}
+
+#mostrarTip{
+    position: absolute;
+    top: 5em;
+    right: 4em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+}
+
+#mostrarTip img{
+    cursor: pointer;
+}
+
+#ocultarTip{
+    position: absolute;
+    top: -10em;
+    right: -10em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+#ocultarTip img{
+    cursor: pointer;
+}
+
+#mostrarAyuda{
+    position: absolute;
+    top: 10em;
+    right: 4em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+}
+
+#mostrarAyuda img{
+    cursor: pointer;
+}
+
+#ocultarAyuda{
+    position: absolute;
+    top: -20em;
+    right: -20em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+#ocultarAyuda img{
+    cursor: pointer;
+}
+
+#cerrarOva{
+    position: absolute;
+    top: 5em;
+    left: 11em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+#cerrarOva img{
+    cursor: pointer;
+}
+
+#vinculo-feedback-ok{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 80%;
+    display: none;
+    position: absolute;
+    z-index: 5;
+}
+
+#vinculo-feedback-ok img{
+    margin-top: 5em;
+    width: 370px;
+    height: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vinculo-feedback-wrong{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    z-index: 5;
+}
+
+#vinculo-feedback-wrong img{
+    margin-top: 5em;
+    width: 370px;
+    height: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cuadrojuego{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 40em;
+    background-image: url('../OVA1-v9-cantidades-images/fondo-escena_2.png');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.cuadrojuego2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 40em;
+    background-image: url('../OVA1-v9-cantidades-images/fondo-escena_1.png');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.cuadrojuego-grilla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 30%;
+}
+
+.cuadrojuego-grilla-desc{
+    width: 20%;
+    height: 100%;
+    background-color: #830000;
+    font-family: calibri-bold;
+}
+
+.desc-celda{
+    width: 100%;
+    height: 14.30%;
+    border: solid 1px black;
+}
+
+.desc-celda h3{
+    color: white;
+    font-size: 1.2em;
+    font-family: calibri-bold;
+    text-align: center;
+    margin-top: 0.3em;
+}
+
+.desc-celda h4{
+    color: white;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    text-align: right;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+}
+
+.cuadrojuego-grilla-celdas{
+    width: 70%;
+    height: 100%;
+    background-color: lightblue;
+}
+
+.grillaceldas-linea{
+    width: 100%;
+    height: 14.30%;
+    display: flex;
+}
+
+#linea1{
+    background-color: #E74E25;
+}
+
+.celda{
+    display: inline-block;
+    width: 14.30%;
+    height: 100%;
+}
+
+.celda p{
+    color: white;
+    font-family: calibri-bold;
+    font-size:0.9em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.celda input{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.celda select{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.cuadrojuego-grilla-botones{
+    width: 10%;
+    height: 100%;
+    background-color: #E74E25;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cuadrojuego-grilla-botones button{
+    width: 100%;
+    height: 14.30%;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#validar{
+    position: absolute;
+    top: 30em;
+    right: 4em;
+    border: solid 0px;
+    background: rgba(0, 0, 0, 0);
+    cursor:pointer;
+
+}
+
+#validar img{
+    width: 150px;
+    height: 65px;
+}
+
+.enlace-resultados{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 20%;
+    display: none;
+    position: absolute;
+    z-index: 7;
+    bottom: 0;
+}
+
+.enlace-resultados div{
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-family: calibri-bold;
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding-top: 2em;
+    text-align: center;
+    text-decoration: none;
+    width: 30%;
+}

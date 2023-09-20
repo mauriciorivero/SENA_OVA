@@ -1,0 +1,28 @@
+body{
+    margin:0px;
+    background: url(../OVA1-v9-images/fondo_textura.jpg);
+}
+#animation_container{
+    background-color:rgba(255, 255, 255, 0.00); 
+    width:1366px; 
+    height:768px
+}
+
+#canvas{
+    position: absolute; 
+    display: block; 
+    background-color:rgba(255, 255, 255, 0.00);
+    width:1366px; 
+    height:768px;
+}
+
+#dom_overlay_container{
+    pointer-events:none; 
+    overflow:hidden; 
+    width:1366px; 
+    height:768px; 
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    display: block;
+}

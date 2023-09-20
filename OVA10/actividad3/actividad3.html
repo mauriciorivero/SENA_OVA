@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>actividad3</title>
+<!-- write your code here -->
+<link rel="stylesheet" href="css/ova10-act3.css">
+<script src="CreateJS-1.0.1/dist/createjs.js"></script>
+<script src="CreateJS-1.0.1/dist/createjs.min.js"></script>
+<script src="actividad3.js?1688490433685"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("258C3A7AEC1545AF81A49E38DF04F3C9");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib.actividad3();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();">
+	<div id="animation_container">
+		<canvas id="canvas"></canvas>
+		<div id="dom_overlay_container"></div>
+	</div>
+	<div id="feedbackcontainer">
+		<div id="feedbackcontainer_positive" class="feedbackcontainer">
+			<h1>Felicitaciones!</h1>
+			<p>Has completado toda la ruleta y colocado correctamente todas las definciones en el texto. Puedes volver al contenido principal y hacer las otras actividades</p>
+			<button id="terminarBtn">Terminar</button>
+		</div>
+		<div id="feedbackcontainer_negative" class="feedbackcontainer">
+			<h1>Que mal!</h1>
+			<p>Has completado toda la ruleta pero no has colocado correctamente todas las definciones en el texto de modo que nuestro amigo fué ahorcado Puedes volver a intentarlo luego de repasar el material</p>
+			<button id="reinciarBtn">Reiniciar</button>
+		</div>
+	</div>
+    <div id='_preload_div_'><span></span><img src=images/_preloader.gif?1688490433686 /></div>
+	<div id="container_status" class="container_status">
+		<div>
+			<img class="status_ahorcado" id="imgAhorcado" src="" alt="">
+		</div>
+		<div class="status_puntos">
+			<h1 id="contador_intentos" class="status_intentos">Intentos: </h1>
+			<h1 id="contador_aciertos" class="status_aciertos">Aciertos: </h1>
+			<h1 id="contador_errores" class="status_errores">Errores: </h1>
+		</div>
+	</div>
+	<script src="js/parametrizacion-ova10-act3.js"></script>
+</body>
+</html>

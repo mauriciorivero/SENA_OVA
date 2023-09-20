@@ -1,0 +1,174 @@
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: CalibriRegular;
+    src: url(fonts/Calibri_Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: CalibriBold;
+    src: url(fonts/Calibri_Bold.TTF) format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    align-items: center;
+    background-color: #830000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:0px;
+}
+
+#animation_container{
+    background-color:rgba(255, 255, 255, 0); 
+    margin-top:2rem;
+}
+
+#canvas{
+    background-color:rgba(255, 255, 255, 0);
+    border: solid red 0.5rem;
+    border-radius: 2.2rem;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+}
+
+#dom_overlay_container{
+    display: none;
+    left: 0px;
+    overflow:hidden;
+    pointer-events:none;  
+    position: absolute;
+    top: 0px;
+}
+
+#_preload_div_{
+    position:absolute; 
+    top:0; 
+    left:0; 
+    display: 
+    inline-block; 
+    height:768px; 
+    width: 1366px; 
+    text-align: center;
+}
+
+#_preload_div_ span{
+    display: inline-block; 
+    height: 100%; 
+    vertical-align: middle;
+}
+
+#_preload_div_ img{
+    vertical-align: middle; 
+    max-height: 100%;
+}
+
+.container_status{
+    align-items: center;
+    background-color: #830000;
+    border: solid red 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    margin-top:-5rem;
+    padding: 2rem;
+    width: 40rem;
+    z-index: 3;
+}
+
+.status_ahorcado{
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.status_puntos{
+    padding: 2rem;
+    width: 40rem;
+}
+
+.status_intentos{
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 4rem;
+}
+
+.status_aciertos{
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 4rem;
+}
+
+.status_errores{
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 4rem;
+}
+
+.feedbackcontainer{
+    align-items: center;
+    background-color: #830000;
+    border: solid red 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+    margin: 5rem;
+    padding: 4rem;
+    width: 80vw;
+}
+
+.feedbackcontainer h1{
+    color: #fff;
+    font-family: BebasNeue;
+    font-size: 5rem;
+}
+
+.feedbackcontainer p{
+    color: #fff;
+    font-family: calibri;
+    font-size: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.feedbackcontainer button{
+    background-color: #830000;
+    border: solid 0.5rem red;
+    border-radius: 0.6rem;
+    color: #fff;
+    cursor: pointer;
+    font-family: BebasNeue;
+    font-size: 2rem;
+    height: 5vh;
+    margin-top: 2rem;
+    width: 20vw;
+}
+
+.feedbackcontainer button:hover{
+    background-color: #fff;
+    border: solid 0.5rem #fff;
+    border-radius: 0.6rem;
+    color:  #830000;
+    font-family: BebasNeue;
+    font-size: 2rem;
+    height: 5vh;
+    margin-top: 2rem;
+    width: 20vw;
+}

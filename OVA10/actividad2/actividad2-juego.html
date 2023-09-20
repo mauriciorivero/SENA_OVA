@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>actividad2-juego</title>
+<!-- write your code here -->
+<link rel="stylesheet" href="css/actividad2.css">
+<script src="CreateJS-1.0.1/dist/createjs.js"></script>
+<script src="CreateJS-1.0.1/dist/createjs.min.js"></script>
+<script src="actividad2-juego.js?1687370941364"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("2C2501AE8DA1461A929F19CE0733B22C");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib.actividad2juego();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container">
+		<canvas id="canvas"></canvas>
+		<div id="dom_overlay_container">
+		</div>
+	</div>
+	
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:335px; width: 1280px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1687370941365 style='vertical-align: middle; max-height: 100%'/></div>
+	<section id="prueba">
+		<div class="contenedor-palabra">
+			<div id="timer-container" class="timer-box">
+				<p class="timer-text">Tiempo: </p>
+				<p id="timer-clock" class="timer-text">20:00</p>
+			</div>
+			<div id="ContenedorLetraA" class="contenedor-definicion">
+				<h1 id="definicion-tituloA">A _ _ N _ _</h1>
+				<p id="definicionLetraA">Documento por medio del cual la Entidad Estatal modifica los pliegos de condiciones.</p>
+				<input id="inputLetraA" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonA">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraB" class="contenedor-definicion">
+				<h1 id="definicion-tituloB">B _ _ A _ _ _ A _</h1>
+				<p id="definicionLetraB">Supone un acuerdo de las voluntades entre la Entidad Estatal contratante y el Contratista en relación con el balance final del contrato y el acta correspondiente es un negocio jurídico, definitivo y obligatorio para las partes.</p>
+				<input id="inputLetraB" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonB">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraC" class="contenedor-definicion">
+				<h1 id="definicion-tituloC">C _ _ O _ _ _ _  C _ _ _ _ A  E _ _ _ E _ _ E</h1>
+				<p id="definicionLetraC">Agencia Nacional de Contratación Pública creada por medio del Decreto-Ley 4170 de 2011</p>
+				<input id="inputLetraC" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonC">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraD" class="contenedor-definicion">
+				<h1 id="definicion-tituloD">D _ _ A _ _ _ _</h1>
+				<p id="definicionLetraD">Tiempo que dura algo o que transcurre entre el comienzo y el fin de un proceso.</p>
+				<input id="inputLetraD" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonD">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraE" class="contenedor-definicion">
+				<h1 id="definicion-tituloE">E _ _ _ _ _ _  E _ _ A _ _ _</h1>
+				<p id="definicionLetraE">Organismo de derecho público estatal con personalidad jurídica y patrimonio propios, a quien se encomienda en régimen de descentralización la organización y administración de algún servicio público, el cumplimiento de actividades económicas al servicio de fines diversos y la administración de determinados bienes del estado</p>
+				<input id="inputLetraE" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonE">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraF" class="contenedor-definicion">
+				<h1 id="definicion-tituloF">F _ _ _ _ A</h1>
+				<p id="definicionLetraF">Fondo de solidaridad y garantía.</p>
+				<input id="inputLetraF" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonF">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraG" class="contenedor-definicion">
+				<h1 id="definicion-tituloG">G _ _ _ _ _ I _</h1>
+				<p id="definicionLetraG">Documento que se exige al oferente o contratista para avalar el cumplimiento de las obligaciones que éste adquiere dentro del proceso contractual.</p>
+				<input id="inputLetraG" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonG">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraH" class="contenedor-definicion">
+				<h1 id="definicion-tituloH">H _ _ _ _ A _ _ _</h1>
+				<p id="definicionLetraH">Es el tipo de remuneración que recibe un trabajador independiente para la prestación de sus servicios profesionales prestados esporádica o temporalmente sin entrar en una relación laboral.</p>
+				<input id="inputLetraH" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonH">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraI" class="contenedor-definicion">
+				<h1 id="definicion-tituloI">I _ _ A _ _ _ _ _ A _</h1>
+				<p id="definicionLetraI">Incapacidad, ineptitud o circunstancias que impiden a una persona ser elegida o designada en un cargo público y en ciertos casos, impiden el ejercicio del empleo a quienes ya se encuentran vinculados al servicio.</p>
+				<input id="inputLetraI" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonI">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraJ" class="contenedor-definicion">
+				<h1 id="definicion-tituloJ">J _ _ I _ _ _ _</h1>
+				<p id="definicionLetraJ">Este tipo de liquidación la puede solicitar el contratista a través de la acción de controversias contractuales cuando la liquidación del contrato no se haya logrado de mutuo acuerdo y la entidad estatal no lo haya liquidado unilateralmente. Corresponde al juez llevarla a cabo.</p>
+				<input id="inputLetraJ" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonJ">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraK" class="contenedor-definicion">
+				<h1 id="definicion-tituloK">K _ E _ O _ _ _ _ _ A T _ _ _ O _ </h1>
+				<p id="definicionLetraK">Es la capacidad máxima de contratación del inscrito en el RUP. Se refiere a la aptitud de un oferente para cumplir oportuna y cabalmente con el objeto de un contrato de obra, sin que sus otros compromisos contractuales afecten su habilidad de cumplir con el contrato que está en proceso de selección.</p>
+				<input id="inputLetraK" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonK">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraL" class="contenedor-definicion">
+				<h1 id="definicion-tituloL">L _ _ _ _ D _ _ _ _ N</h1>
+				<p id="definicionLetraL">Procedimiento mediante el cual las partes cruzan sus cuentas con respecto a sus obligaciones una vez firmado el contrato</p>
+				<input id="inputLetraL" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonL">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraM" class="contenedor-definicion">
+				<h1 id="definicion-tituloM">M _ _ _ M _</h1>
+				<p id="definicionLetraM">Micro, pequeña y mediana empresa medida de acuerdo con la ley vigente aplicable.</p>
+				<input id="inputLetraM" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonM">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraN" class="contenedor-definicion">
+				<h1 id="definicion-tituloN">N _ _ _</h1>
+				<p id="definicionLetraN">Es un modelo para habilitar acceso a un conjunto compartido de recursos computacionales configurables, por ejemplo, redes, servidores, almacenamiento, aplicaciones y servicios accesibles mediante internet.</p>
+				<input id="inputLetraN" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonN">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraO" class="contenedor-definicion">
+				<h1 id="definicion-tituloO">O _ _ _ T _</h1>
+				<p id="definicionLetraO">Es la cantidad de bienes y servicios que se ponen a la venta, que pueden ser frijoles, horas de clases de matemáticas, dulces o cualquier otra cosa que se nos ocurra.</p>
+				<input id="inputLetraO" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonO">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraP" class="contenedor-definicion">
+				<h1 id="definicion-tituloP">P _ _ _ _ E _ _ _</h1>
+				<p id="definicionLetraP">Cualquier interesado en participar en el Sistema de Compra Pública vendiendo bienes, obras o servicios a las Entidades Estatales</p>
+				<input id="inputLetraP" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonP">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraQ" class="contenedor-definicion">
+				<h1 id="definicion-tituloQ">Q _ _ _ B _ _</h1>
+				<p id="definicionLetraQ">Situación jurídica en la que una persona, empresa o institución (personas jurídicas) no puede hacer frente a los pagos que debe realizar porque estos son superiores a sus recursos económicos disponibles (activos).</p>
+				<input id="inputLetraQ" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonQ">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraR" class="contenedor-definicion">
+				<h1 id="definicion-tituloR">R _ _</h1>
+				<p id="definicionLetraR">Es un registro que llevan las cámaras de comercio y en el cual los proponentes interesados en participar en Procesos de contratación deben estar inscritos.</p>
+				<input id="inputLetraR" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonR">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraS" class="contenedor-definicion">
+				<h1 id="definicion-tituloS">S _ C _ _</h1>
+				<p id="definicionLetraS">Es la herramienta diseñada para recoger y brindar toda la información acerca de las contrataciones que se realizan con dineros públicos de manera oficial.</p>
+				<input id="inputLetraS" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonS">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraT" class="contenedor-definicion">
+				<h1 id="definicion-tituloT">T _ _ N _ _ _ _ _ N _ _ _</h1>
+				<p id="definicionLetraT">Principio de la administración pública, que propende por la democratización y libertad de acceso a la información y la inclusión ciudadana.</p>
+				<input id="inputLetraT" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonT">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraU" class="contenedor-definicion">
+				<h1 id="definicion-tituloU">U _ _ L _ _ _ _ _ L</h1>
+				<p id="definicionLetraU">Es el tipo de liquidación que solo corresponde a la Entidad Estatal, no al contratista.</p>
+				<input id="inputLetraU" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonU">Comprobar</button>
+			</div>
+			<div id="ContenedorLetraV" class="contenedor-definicion">
+				<h1 id="definicion-tituloV">V _ _ _ _ T _</h1>
+				<p id="definicionLetraV">Es aquel contrato o proceso que está en vigor u observancia.</p>
+				<input id="inputLetraV" type="text" placeholder="Digita la palabra con la letra pedida (toda en minusculas)">
+				<button id="definicion_botonV">Comprobar</button>
+			</div>
+			<div id="ContenedorFinalizadoTiempo" class="contenedor-definicion">
+				<h1 id="definicion-tituloV">Se acabó el tiempo!</h1>
+				<p>Revisa nuevamente el material de estudio acerca de procesos de contratación y vuelve a intentar la actividad para obtener el puntaje requerido antes de que finalice el tiempo</p>
+				<button id="btnReiniciar">Reiniciar</button>
+			</div>
+			<div id="ContenedorFinalizadoPositivo" class="contenedor-definicion">
+				<h1 id="definicion-tituloV">Felicitaciones!</h1>
+				<p>Has completado la actividad sastifactoriamente, te invitamos a que sigas navegando el contenido volviendo a la parte principal del OVA para realizar las otras actividades</p>
+				<button id="btnFinalizar">Volver al OVA</button>
+			</div>
+			<div id="ContenedorFinalizadoNegativo" class="contenedor-definicion">
+				<h1 id="definicion-tituloV">Vuelve a intentarlo!</h1>
+				<p>Revisa nuevamente el material de estudio acerca de procesos de contratación y vuelve a intentar la actividad para obtener el puntaje requerido</p>
+				<button id="btnReiniciar2">Reiniciar</button>
+			</div>
+		</div>
+	</section>
+	<div id="contenedor-resultados">
+		<h2>Total de aciertos y errores</h2>
+		<h3 id="resA" class="resultadoPalabra"> </h3>
+		<h3 id="resB" class="resultadoPalabra"> </h3>
+		<h3 id="resC" class="resultadoPalabra"> </h3>
+		<h3 id="resD" class="resultadoPalabra"> </h3>
+		<h3 id="resE" class="resultadoPalabra"> </h3>
+		<h3 id="resF" class="resultadoPalabra"> </h3>
+		<h3 id="resG" class="resultadoPalabra"> </h3>
+		<h3 id="resH" class="resultadoPalabra"> </h3>
+		<h3 id="resI" class="resultadoPalabra"> </h3>
+		<h3 id="resJ" class="resultadoPalabra"> </h3>
+		<h3 id="resL" class="resultadoPalabra"> </h3>
+		<h3 id="resM" class="resultadoPalabra"> </h3>
+		<h3 id="resN" class="resultadoPalabra"> </h3>
+		<h3 id="resO" class="resultadoPalabra"> </h3>
+		<h3 id="resP" class="resultadoPalabra"> </h3>
+		<h3 id="resQ" class="resultadoPalabra"> </h3>
+		<h3 id="resR" class="resultadoPalabra"> </h3>
+		<h3 id="resS" class="resultadoPalabra"> </h3>
+		<h3 id="resT" class="resultadoPalabra"> </h3>
+		<h3 id="resU" class="resultadoPalabra"> </h3>
+		<h3 id="resV" class="resultadoPalabra"> </h3>
+	</div>
+	<script src="js/parametrizacion-ova10-act2.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="OVA_actividad3_css/actividad3-styles.css">
+    <title>OVA5 - Actividad 3</title>
+</head>
+<body>
+    <main class="contendorppal">
+        <div class="contenedorppal__ejercicio">
+            <h1 class="contenedorppalejercicio__titulo1">Introducción</h1>
+            <p class="contenedorppalejercicio__parrafo">Para el desarrollo de la actividad es importante que se descargue del documento de apoyo “Material de apoyo actividad 1” ubicado al pie de la introducción del OVA. Posterior a ellos deberás resolver de manera manual el ejercicio, con el fin de que puedas diligenciar el cuadro de hierros planteado en la siguiente página.
+                </p>
+                <a class="descarga" href="OVA_actividad3_doc/teoria_actividad3.pdf" target="_blank"><img src="OVA_actividad3_img/graficos_descargar.png" alt=""></a>
+                <div class="botoneranavegacion">
+                    <a id="ova5-act3-atras" class="contendorppal__hipervinculoatras" href="#"><img src="OVA_actividad3_img/graficos_btn-atras.png" alt=""></a>  
+                    <a class="contendorppal__hipervinculo" href="OVA5_actividad3_ejercicio_final.html"><img src="OVA_actividad3_img/graficos_btn-siguiente.png" alt=""></a>  
+                </div>
+        </div>
+        
+    </main>
+    <script>
+        var actividad = "actividad3";
+        document.getElementById("ova5-act3-atras").onclick = function(){
+            localStorage.setItem("textvalue", actividad);
+            window.open("../OVA5.html","_self");
+            return false;
+        };
+    </script>
+</body>
+</html>

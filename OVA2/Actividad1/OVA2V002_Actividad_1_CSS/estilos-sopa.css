@@ -1,0 +1,88 @@
+@font-face {
+  font-family: calibri;
+  src: url(../OVA2V002_Actividad_1_fonts/Calibri_Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: BebasNeue;
+  src: url(../OVA2V002_Actividad_1_fonts/BebasNeue-Regular.ttf) format("truetype");
+}
+
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:62.5%;
+}
+
+.container {
+  background-image: url(../OVA2V002_Actividad_1_img/fondo-escena-2_1.png);
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  height: 640px;
+  margin-left: auto;
+  margin-right:auto;
+  width: 960px;
+}
+
+
+  
+.Palabras { 
+  font-family: calibri;
+  height: 300px;
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  top: 160px;
+  left: 110px;
+}
+
+.introduccion .texto-introduccion{
+  margin-top:-10px;
+  font-size: 12px;
+  width: 230px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Palabras h2{
+  color: #680200;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.contenedor-palabras{
+  border: solid 3px #B11629; 
+  width: 250px;
+}
+
+
+.contenido-sopa {
+  height: 400px;
+  position: relative;
+  right: 120px;
+  top: 130px;
+  width: 400px;      
+}
+
+#enlace_terminar{
+  display:none;
+}
+
+#btn_cerrar{
+  position: absolute;
+  top: 35px;
+  right: 200px;
+}
+
+#btn_atras{
+  position: absolute;
+  top: 35px;
+  left: 200px;
+}

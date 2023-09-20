@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/act3_styles.css">
+    <title>Document</title>
+    <script src="CreateJS-1.0.1/dist/createjs.js"></script>
+    <script src="CreateJS-1.0.1/dist/createjs.min.js"></script>
+    <script src="actividad3b.js"></script>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main id="main">
+        <section id="box_intro" class="excerise_intro">
+            
+        </section>
+        <section id="introduction_box" class="excercise_box">
+            <h1>Cantidad de obra para acabados de baños</h1>
+            <p>Descargue el PDF con las indicaciones, lea muy bien todo el marco teórico y luego prosiga a desarrollar la actividad haciendo clic en el botón iniciar actividad</p>
+            <button id="introduction_download-button">Descargar</button>
+            <button id="introduction_start-button">Iniciar actividad</button>
+            <button id="backBtn">Volver</button>
+        </section>
+        <section id="main_box" class="excercise_box">
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>AREA</h2></div>
+                <div class="excercise_box-columnhead"><h2>L</h2></div>
+                <div class="excercise_box-columnhead"><h2>A</h2></div>
+                <div class="excercise_box-columnhead"><h2>H</h2></div>
+                <div class="excercise_box-columnhead"><h2>Cantidad Total</h2></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona húmeda echape piso</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento1_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona húmeda enchape pared</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento2_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca ecnhape piso</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento3_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento4_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento5_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento5_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento5_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento5_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona humeda estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento6_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento6_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento6_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento6_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona húmeda pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento7_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento7_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento7_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento7_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona seca estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento8_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento8_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento8_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento8_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona seca pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento9_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento9_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento9_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="estructura_elemento9_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+        
+            <div class="excercise_box-columaction">
+                <button id="estructura-btnContinue">Continuar</button>
+                <button id="estructura-btnReload">Reiniciar</button>
+                <button id="estructura-calcular-btn">Calcular</button>
+            </div>
+        </section>
+
+
+        <!-------------------------------------------------------------------------------------------------------------------------->
+        <!--------Section 2 for the second part of the excersice-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------------------------------------------->
+
+        <section id="main_box2" class="excercise_box">
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>AREA</h2></div>
+                <div class="excercise_box-columnhead"><h2>L</h2></div>
+                <div class="excercise_box-columnhead"><h2>A</h2></div>
+                <div class="excercise_box-columnhead"><h2>H</h2></div>
+                <div class="excercise_box-columnhead"><h2>Cantidad Total</h2></div>
+                <div class="excercise_box-columnhead"><h2>Total</h2></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona húmeda echape piso</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento10_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento10_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento10_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento10_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona húmeda enchape pared</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento11_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento11_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento11_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento11_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca ecnhape piso</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento12_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento12_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento12_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento12_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento13_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento13_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento13_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento13_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Zona seca pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento14_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento14_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento14_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento14_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona humeda estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento15_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento15_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento15_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento15_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona húmeda pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento16_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento16_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento16_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento16_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona seca estuco</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento17_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento17_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento17_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento17_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+            <div class="excercise_box-row">
+                <div class="excercise_box-columnhead"><h2>Cielo raso zona seca pintura</h2></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento18_ancho" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento18_alto" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento18_parcial" class="excercise_box-input" type="text"></div>
+                <div class="excercise_box-columnhead"><input id="hierro_elemento18_cantidad" class="excercise_box-input" type="text"></div>
+            </div>
+        
+            <div class="excercise_box-columaction">
+                <button id="hierro-btnBack">Continuar</button>
+                <button id="hierro-btnReload">Reiniciar</button>
+                <button id="hierro-calcular-btn">Calcular</button>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/Activity3-Actions.js"></script>
+</body>
+</html>

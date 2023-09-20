@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cantidades.css">
+    <title>OVA1 - Cantidades de Obra</title>
+    <script src="CreateJS-1.0.1/dist/createjs.js"></script>
+    <script src="CreateJS-1.0.1/dist/createjs.min.js"></script>
+    <script src="OVA1-v9-cantidades-hover-explicacion.js?1626970958480"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("96C1BF2465F047F585E58EF407490B96");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.OVA1v9cantidadeshoverexplicacion();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+</head>
+<body onload="init();" style="margin:0px;">
+    <div id="animation_container">
+		<canvas id="canvas"></canvas>
+		<div id="dom_overlay_container">
+		</div>
+	</div>
+    <!-- window.close(); return false; -->
+    <div id="contenedor-ayuda"></div>
+    <a href="#" onclick="" id="vinculo-feedback-ok">
+        <img src="OVA1-v9-cantidades-images/feedback_ok.png" alt="imagen con retroalimentacion positiva">
+    </a>
+    <a id="btn-resultados" class="enlace-resultados" href="docs/resultados-cantidades.pdf" target="_blank">
+        <div><p>Ver tabla de resultados</p></div>
+    </a>
+    <a href="#" onclick="alert('Ejercicio fallado');" id="vinculo-feedback-wrong">
+        <img src="OVA1-v9-cantidades-images/feedback_wrong.png" alt="imagen con retroalimentacion negativa">
+    </a>
+    
+    <div class="cuadrojuego">
+        <button id="mostrarTip"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_mostrar-plano.png" alt=""></button>
+        <button id="ocultarTip"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_ocultar-plano.png" alt=""></button>
+        <button id="mostrarAyuda"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_mostrar-ayuda.png" alt=""></button>
+        <button id="ocultarAyuda"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_ocultar-ayuda.png" alt=""></button>
+        <button id="cerrarOva"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_cerrar.png" alt=""></button>
+        <div class="cuadro-explicacion">
+            
+        </div>
+        <div class="cuadrojuego-grilla">
+            <div class="cuadrojuego-grilla-desc">
+                <div class="desc-celda"><h4>Descripción</h4></div>
+                <div class="desc-celda"><h4>Columnas</h4></div>
+                <div class="desc-celda"><h4>Columnetas</h4></div>
+                <div class="desc-celda"><h4>Vigas aéreas A</h4></div>
+                <div class="desc-celda"><h4>Vigas aéreas B</h4></div>
+                <div class="desc-celda"><h4>Vigas Cimentación</h4></div>
+                <div class="desc-celda"><h4>Losa aligerada</h4></div>
+                <div style="background-color: #830000; border: solid 1px black;" class="desc-celda"><h4>Losa Cimentación</h4></div>
+            </div>
+            <div class="cuadrojuego-grilla-celdas">
+                <div id="linea1" class="grillaceldas-linea">
+                    <div class="celda"><p>UNIDAD</p></div>
+                    <div class="celda"><p>LARGO</p></div>
+                    <div class="celda"><p>ANCHO</p></div>
+                    <div class="celda"><p>ALTO</p></div>
+                    <div class="celda"><p>PARCIAL</p></div>
+                    <div class="celda"><p>CANTIDAD</p></div>
+                    <div class="celda"><p>TOTAL</p></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c2-1" class="celda">
+                        <select id="i1-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c2-2" class="celda"><input id="i1-2" type="number" step="0.01" value="0,00"></div>
+                    <div id="c2-3" class="celda"><input id="i1-3" type="number" step="0.01" value="0,00"></div>
+                    <div id="c2-4" class="celda"><input id="i1-4" type="number" step="0.01" value="0,00"></div>
+                    <div id="c2-5" class="celda"><input id="i1-5" type="number" step="0.01" value="0,00"></div>
+                    <div id="c2-6" class="celda"><input id="i1-6" type="number" step="0.01" value="0,00"></div>
+                    <div id="c2-7" class="celda"><input id="i1-7" type="number" step="0.01" value="0,00"></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c3-1" class="celda">
+                        <select id="i2-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c3-2" class="celda"><input id="i2-2" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c3-3" class="celda"><input id="i2-3" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c3-4" class="celda"><input id="i2-4" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c3-5" class="celda"><input id="i2-5" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c3-6" class="celda"><input id="i2-6" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c3-7" class="celda"><input id="i2-7" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c4-1" class="celda">
+                        <select id="i3-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c4-2" class="celda"><input id="i3-2" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-3" class="celda"><input id="i3-3" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-4" class="celda"><input id="i3-4" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-5" class="celda"><input id="i3-5" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-6" class="celda"><input id="i3-6" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-7" class="celda"><input id="i3-7" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c4-1b" class="celda">
+                        <select id="i3-1b">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c4-2b" class="celda"><input id="i3-2b" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-3b" class="celda"><input id="i3-3b" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-4b" class="celda"><input id="i3-4b" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-5b" class="celda"><input id="i3-5b" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-6b" class="celda"><input id="i3-6b" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c4-7b" class="celda"><input id="i3-7b" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>  
+                <div class="grillaceldas-linea">
+                    <div id="c5-1" class="celda">
+                        <select id="i4-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c5-2" class="celda"><input id="i4-2" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c5-3" class="celda"><input id="i4-3" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c5-4" class="celda"><input id="i4-4" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c5-5" class="celda"><input id="i4-5" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c5-6" class="celda"><input id="i4-6" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c5-7" class="celda"><input id="i4-7" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c6-1" class="celda">
+                        <select id="i5-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c6-2" class="celda"><input id="i5-2" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c6-3" class="celda"><input id="i5-3" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c6-4" class="celda"><input id="i5-4" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c6-5" class="celda"><input id="i5-5" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c6-6" class="celda"><input id="i5-6" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c6-7" class="celda"><input id="i5-7" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>
+                <div class="grillaceldas-linea">
+                    <div id="c7-1" class="celda">
+                        <select id="i6-1">
+                            <option value="sel" selected>SEL</option>
+                            <option value="m">m</option>
+                            <option value="m2">m2</option>
+                            <option value="m3">m3</option>
+                        </select>
+                    </div>
+                    <div id="c7-2" class="celda"><input id="i6-2" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c7-3" class="celda"><input id="i6-3" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c7-4" class="celda"><input id="i6-4" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c7-5" class="celda"><input id="i6-5" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c7-6" class="celda"><input id="i6-6" type="number" step="0.01" value="0,00" lang="es"></div>
+                    <div id="c7-7" class="celda"><input id="i6-7" type="number" step="0.01" value="0,00" lang="es"></div>
+                </div>
+            </div>
+            <button id="validar"><img src="OVA1-v9-cantidades-images/OVA1-v9-iconos_validar.png" alt=""></button>
+        </div>
+    </div>
+    <script src="js/control-tabla-2.js"></script>
+</body>
+</html>

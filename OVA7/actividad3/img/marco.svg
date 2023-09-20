@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	
+		.st0{clip-path:url(#SVGID_00000033336991423642999730000016110391619391236778_);fill:url(#SVGID_00000051362665476178074040000000842190614914714006_);}
+</style>
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M31.1,27.7h796.7L859.3,0h209.7l31.6,27.7h791.1v380.1l28.2,30.4v203.7l-28.2,30.4v380.1H1101l-31.9,28
+			H859.3l-31.9-28H31.1V675.3L0,641.9V438.2l31.1-33.4V27.7z M61.6,48.8h1799.6v979H61.6V48.8z"/>
+	</defs>
+	
+		<linearGradient id="SVGID_00000119114677491471185330000005140872655751130782_" gradientUnits="userSpaceOnUse" x1="3.984644e-04" y1="540.1723" x2="1920" y2="540.1723">
+		<stop  offset="0" style="stop-color:#E64F27"/>
+		<stop  offset="0.5098" style="stop-color:#F08537"/>
+		<stop  offset="1" style="stop-color:#811810"/>
+	</linearGradient>
+	
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_00000119114677491471185330000005140872655751130782_);"/>
+	<clipPath id="SVGID_00000097466420837323366530000013789578141775213973_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	
+		<linearGradient id="SVGID_00000094605064278589528210000015757298024229497494_" gradientUnits="userSpaceOnUse" x1="-477.2818" y1="540.1725" x2="2397.2815" y2="540.1725">
+		<stop  offset="0" style="stop-color:#E64F27"/>
+		<stop  offset="0.5098" style="stop-color:#F08537"/>
+		<stop  offset="1" style="stop-color:#811810"/>
+	</linearGradient>
+	
+		<polygon style="clip-path:url(#SVGID_00000097466420837323366530000013789578141775213973_);fill:url(#SVGID_00000094605064278589528210000015757298024229497494_);" points="
+		-477.3,817.5 1452.9,1880.4 2397.3,262.8 467.1,-800.1 	"/>
+</g>
+</svg>
