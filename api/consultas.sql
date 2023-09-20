@@ -1,0 +1,14 @@
+insert into CONTENIDO values (null, 'OVA - Portafolio de servicios', 'Versión interactiva del portafolio', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA - Presentacion HUB Innovación', 'Transferencia de conocimiento', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA - Información del programa', 'Objetivo virtual de aprendizaje - Versión 1.0 de Julio de 2021.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA01 - Cantidades de Obra y Dosificaciones', 'Objetivo virtual de aprendizaje - Versión 1.0 de Julio de 2021.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA02 - Herramientas', 'Objetivo virtual de aprendizaje - Versión 1.0 de Agosto de 2021.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA03 - Mampostería', 'Objetivo virtual de aprendizaje - Versión 1.0 de Septiembre de 2021.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA04 - Estructuras', 'Objetivo virtual de aprendizaje - Versión 3.1 de Abril de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA05 - Elementos Estructurales', 'Objetivo virtual de aprendizaje - Versión 3.1 de Abril de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA06 - Escaleras', 'Objetivo virtual de aprendizaje - Versión 3.1 de Septiembre de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA07 - Losas', 'Objetivo virtual de aprendizaje - Versión 1.0 de Octubre de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA08 - Acabados', 'Objetivo virtual de aprendizaje - Versión 1.0 de Noviembre de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA09 - Materiales Alternativos para la Construcción', 'Objetivo virtual de aprendizaje - Versión 1.0 de Diciembre de 2022.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA010 - Guía de Contratación', 'Objetivo virtual de aprendizaje - Versión 1.0 de Junio de 2023.', 'V1', 'Construcción', 0, 0);
+insert into CONTENIDO values (null, 'OVA011 - Procesos Constructivos', 'Objetivo virtual de aprendizaje - Versión 1.0 de Agosto de 2023.', 'V1', 'Construcción', 0, 0);

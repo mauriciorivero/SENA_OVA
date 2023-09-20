@@ -1,3 +1,6 @@
+<?php
+require_once "api/ova-metrics.php";
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
