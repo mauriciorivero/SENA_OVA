@@ -1,5 +1,5 @@
 <?php
-require_once "api/ova-metrics.php";
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -43,7 +43,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 1 -->
 									<section class="box feature">
-										<a href="Portafolio-Servicios/portafolioV03.html" class="image featured" target="_blank"><img src="images/pic01.jpg" alt="Portafolio de Servicios" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=1" class="image featured" target="_self"><img src="images/pic01.jpg" alt="Portafolio de Servicios" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA - Portafolio de Servicios</h2>
@@ -59,7 +59,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 2 -->
 									<section class="box feature">
-										<a href="ova-hub/OVA-HUB.html" class="image featured" target="_blank"><img src="images/picHUB.png" alt="OVA - Presentacion HUB de innovacion" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=2" class="image featured" target="_self"><img src="images/picHUB.png" alt="OVA - Presentacion HUB de innovacion" /></a>
 										<div class="inner">
 											<header>
 												<h2>Presentación HUB de Innovación</h2>
@@ -75,7 +75,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 2 -->
 									<section class="box feature">
-										<a href="Intro/InfProgramaV13.html" class="image featured" target="_blank"><img src="images/pic02.png" alt="OVA - Info Programa" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=3" class="image featured" target="_self"><img src="images/pic02.png" alt="OVA - Info Programa" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA - Informaci&oacute;n Programa</h2>
@@ -92,7 +92,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 3 -->
 									<section class="box feature">
-										<a href="OVA1/OVA1-v9.html" class="image featured" target="_blank"><img src="images/pic03.png" alt="Cantidad-Dosificación" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=4" class="image featured" target="_self"><img src="images/pic03.png" alt="Cantidad-Dosificación" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA01 - Cantidades de Obra y Dosificaciones</h2>
@@ -109,7 +109,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 4 -->
 									<section class="box feature">
-										<a href="OVA2/OVA2V002_intro.html" class="image featured" target="_blank"><img src="images/pic04.png" alt="Herramientas" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=5" class="image featured" target="_self"><img src="images/pic04.png" alt="Herramientas" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA02 - Herramientas</h2>
@@ -126,7 +126,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 4 -->
 									<section class="box feature">
-										<a href="OVA3/OVA3V005.html" class="image featured" target="_blank"><img src="images/pic05.png" alt="Mamposteria" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=6" class="image featured" target="_self"><img src="images/pic05.png" alt="Mamposteria" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA03 - Mampostería</h2>
@@ -143,7 +143,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 4 -->
 									<section class="box feature">
-										<a href="OVA4/OVA4.html" class="image featured" target="_blank"><img src="images/pic06.png" alt="Estructuras" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=7" class="image featured" target="_self"><img src="images/pic06.png" alt="Estructuras" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA04 - Estructuras</h2>
@@ -160,7 +160,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA5/OVA5.html" class="image featured" target="_blank"><img src="images/pic07.png" alt="Cover Elementos Estructurales" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=8" class="image featured" target="_self"><img src="images/pic07.png" alt="Cover Elementos Estructurales" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA05 - Elementos Estructurales</h2>
@@ -177,7 +177,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA6/OVA6.html" class="image featured" target="_blank"><img src="images/pic08.png" alt="Cover Elementos Estructurales" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=9" class="image featured" target="_self"><img src="images/pic08.png" alt="Cover Elementos Estructurales" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA06 - Escaleras</h2>
@@ -194,7 +194,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA7/OVA7V001.html" class="image featured" target="_blank"><img src="images/pic09.png" alt="Cover construccion de losas" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=10" class="image featured" target="_self"><img src="images/pic09.png" alt="Cover construccion de losas" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA07 - Losas</h2>
@@ -211,7 +211,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA8/OVA8.html" class="image featured" target="_blank"><img src="images/pic10.png" alt="Cover construccion de acabados" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=11" class="image featured" target="_self"><img src="images/pic10.png" alt="Cover construccion de acabados" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA08 - Acabados</h2>
@@ -229,7 +229,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA9/OVA9.html" class="image featured" target="_blank"><img src="images/pic11.png" alt="Cover construccion de acabados" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=12" class="image featured" target="_self"><img src="images/pic11.png" alt="Cover construccion de acabados" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA09 - Materiales Alternativos para la Construcción</h2>
@@ -246,7 +246,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA10/OVA10V001.html" class="image featured" target="_blank"><img src="images/pic12.png" alt="Cover construccion de acabados" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=13" class="image featured" target="_self"><img src="images/pic12.png" alt="Cover construccion de acabados" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA010 - Guía de Contratación</h2>
@@ -263,7 +263,7 @@ require_once "api/ova-metrics.php";
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="OVA11/OVA11V001.html" class="image featured" target="_blank"><img src="images/pic13.png" alt="Cover construccion de acabados" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido=14" class="image featured" target="_self"><img src="images/pic13.png" alt="Cover construccion de acabados" /></a>
 										<div class="inner">
 											<header>
 												<h2>OVA011 - Procesos Constructivos</h2>
