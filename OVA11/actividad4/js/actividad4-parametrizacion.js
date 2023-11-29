@@ -4,11 +4,11 @@ var actividad = "actividad4";
 let construccionSeleccionada = null;
 const carrito = [];
 const construcciones = {
-    'zapatas': ['productoCementoGris', 'productoArena', 'productoTriturado', 'productoAgua','productoVarillaMedio','productoAlambreRecocido'],
+    'zapatas': ['productoCementoGris', 'productoArena', 'productoTriturado', 'productoAgua','productoVarillaMedio'],
     'sobrecimiento': ['productoArena', 'productoCementoGris', 'productoBloqueConcreto', 'productoAgua'],
     'muro': ['productoBloquesPerforacion', 'productoVarillaTresOctavo', 'productoGrouting', 'productoAgua'],
-    'enchapes': ['productoCeramica', 'productoPegacor', 'productoBoquilla','productoEstopa','productoAgua'],
-    'losas': ['productoAgua','productoCementoGris', 'productoArena', 'productoTriturado','productoAlambreRecocido','productoMallaElectrosoldada']
+    'enchapes': ['productoCeramica', 'productoPegacor', 'productoBoquilla'],
+    'losas': ['productoAgua','productoCementoGris', 'productoArena', 'productoTriturado','productoAlambreRecocido','productoMallaElectrosoldada', 'productoVarillaCuarto']
     // ... otras construcciones ...
 };
 
@@ -184,6 +184,11 @@ document.getElementById("productoBoquilla").onclick = function(){
 document.getElementById("productoVarillaMedio").onclick = function(){
     agregarAlCarrito("productoVarillaMedio");
 }
+
+document.getElementById("productoVarillaCuarto").onclick = function(){
+    agregarAlCarrito("productoVarillaCuarto");
+}
+
 document.getElementById("productoVarillaTresOctavo").onclick = function(){
     agregarAlCarrito("productoVarillaTresOctavo");
 }
@@ -394,6 +399,9 @@ function agregarAlCarrito(producto) {
     }
     if(producto==="productoVarillaMedio"){
         productoDiv.textContent = "Varilla de ½”";
+    }
+    if(producto==="productoVarillaCuarto"){
+        productoDiv.textContent = "Varilla de 1/4”";
     }
     if(producto==="productoVarillaTresOctavo"){
         productoDiv.textContent = "Varilla de 3/8";

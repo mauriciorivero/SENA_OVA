@@ -1,5 +1,27 @@
 <?php
+/*
+<div class="col-4 col-12-medium">
 
+								<!-- Box 5 -->
+									<section class="box feature">
+										<a href="api/actualizar-metricas.php?idcontenido=14" class="image featured" target="_self"><img src="images/pic13.png" alt="Cover construccion de acabados" /></a>
+										<div class="inner">
+											<header>
+												<h2>OVA011 - Procesos Constructivos</h2>
+												<p>TG. Construcción en Edificaciones</p>
+											</header>
+											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Agosto de 2023.</p>
+											<a href="scorms/OVA-11-SCORM.zip">Descarga SCORM</a>
+										</div>
+									</section>
+
+							</div>
+*/
+
+	include("api/database.php");
+    ini_set('display_errors',1);
+    ini_set('display_startup_errors',1);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,247 +61,33 @@
 				<div id="features-wrapper">
 					<div class="container">
 						<div class="row">
-							<div class="col-4 col-12-medium">
+						<?php
 
-								<!-- Box 1 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=1" class="image featured" target="_self"><img src="images/pic01.jpg" alt="Portafolio de Servicios" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA - Portafolio de Servicios</h2>
-												<p>Versi&oacute;n interactiva del Portafolio</p>
-											</header>
-											<p>Versi&oacute;n 1.0 de Julio de 2021</p>
-										</div>
-									</section>
+							$consulta = "select * from CONTENIDO";
+							$listaContenidos = mysqli_query($conn, $consulta);
 
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 2 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=2" class="image featured" target="_self"><img src="images/picHUB.png" alt="OVA - Presentacion HUB de innovacion" /></a>
-										<div class="inner">
-											<header>
-												<h2>Presentación HUB de Innovación</h2>
-												<p>Transferencia de Conocimiento</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Agosto de 2022</p>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 2 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=3" class="image featured" target="_self"><img src="images/pic02.png" alt="OVA - Info Programa" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA - Informaci&oacute;n Programa</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Julio de 2021.</p>
-											<a href="Intro/InfoPrograma.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-							
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 3 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=4" class="image featured" target="_self"><img src="images/pic03.png" alt="Cantidad-Dosificación" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA01 - Cantidades de Obra y Dosificaciones</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Julio de 2021.</p>
-											<a href="scorms/OVA-1-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-                            <div class="col-4 col-12-medium">
-
-								<!-- Box 4 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=5" class="image featured" target="_self"><img src="images/pic04.png" alt="Herramientas" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA02 - Herramientas</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Agosto de 2021.</p>
-											<a href="scorms/OVA-2-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 4 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=6" class="image featured" target="_self"><img src="images/pic05.png" alt="Mamposteria" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA03 - Mampostería</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Septiembre de 2021.</p>
-											<a href="scorms/OVA-3-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 4 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=7" class="image featured" target="_self"><img src="images/pic06.png" alt="Estructuras" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA04 - Estructuras</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 3.1 de Abril de 2022.</p>
-											<a href="scorms/OVA-4-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
+							while($contenido=mysqli_fetch_array($listaContenidos)){
+								echo '<div class="col-4 col-12-medium">
 
 								<!-- Box 5 -->
 									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=8" class="image featured" target="_self"><img src="images/pic07.png" alt="Cover Elementos Estructurales" /></a>
+										<a href="api/actualizar-metricas.php?idcontenido='.$contenido['id'].'" class="image featured" target="_self"><img src="'.$contenido['url_portada'].'" alt="'.$contenido['nombre'].'" /></a>
 										<div class="inner">
 											<header>
-												<h2>OVA05 - Elementos Estructurales</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
+												<h2>'.$contenido['nombre'].'</h2>
+												<p>'.$contenido['descripcion'].'</p>
 											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 3.1 de Abril de 2022.</p>
-											<a href="scorms/OVA-5-SCORM.zip">Descarga SCORM</a>
+											<a href="api/actualizar-metricas.php?idDescarga='.$contenido['id'].'">Descarga SCORM</a>
+											<p><strong>Total Visitas</strong>: '.$contenido['visitas'].'</p>
+											<p><strong>Total Descargas</strong>: '.$contenido['descargas'].'</p>
 										</div>
 									</section>
 
-							</div>
+							</div>';
+							}
 
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=9" class="image featured" target="_self"><img src="images/pic08.png" alt="Cover Elementos Estructurales" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA06 - Escaleras</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 3.1 de Septiembre de 2022.</p>
-											<a href="scorms/OVA-6-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=10" class="image featured" target="_self"><img src="images/pic09.png" alt="Cover construccion de losas" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA07 - Losas</h2>
-												<p>TG. Construcci&oacute;n de Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Octubre de 2022.</p>
-											<a href="scorms/OVA-7-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=11" class="image featured" target="_self"><img src="images/pic10.png" alt="Cover construccion de acabados" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA08 - Acabados</h2>
-												<p>TG. Construcción en Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Noviembre de 2022.</p>
-											<a href="scorms/OVA-8-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-							
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=12" class="image featured" target="_self"><img src="images/pic11.png" alt="Cover construccion de acabados" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA09 - Materiales Alternativos para la Construcción</h2>
-												<p>TG. Construcción en Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Diciembre de 2022.</p>
-											<a href="scorms/OVA-9-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=13" class="image featured" target="_self"><img src="images/pic12.png" alt="Cover construccion de acabados" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA010 - Guía de Contratación</h2>
-												<p>TG. Construcción en Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Junio de 2023.</p>
-											<a href="scorms/OVA-10-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-							<div class="col-4 col-12-medium">
-
-								<!-- Box 5 -->
-									<section class="box feature">
-										<a href="api/actualizar-metricas.php?idcontenido=14" class="image featured" target="_self"><img src="images/pic13.png" alt="Cover construccion de acabados" /></a>
-										<div class="inner">
-											<header>
-												<h2>OVA011 - Procesos Constructivos</h2>
-												<p>TG. Construcción en Edificaciones</p>
-											</header>
-											<p>Objetivo virtual de aprendizaje - Versi&oacute;n 1.0 de Agosto de 2023.</p>
-											<a href="scorms/OVA-11-SCORM.zip">Descarga SCORM</a>
-										</div>
-									</section>
-
-							</div>
-
-
-
-							
-												
+						?>
+					
 						</div>
 					</div>
 				</div>
